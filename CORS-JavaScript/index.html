@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jsonp</title>
+    <script src="./http.js"></script>
+</head>
+<body>
+<h2>展示豆瓣正在上映api</h2>
+<div id="res"></div>
+<script type="text/javascript">
+    (function () {
+        let url = 'https://api.douban.com/v2/movie/in_theaters';
+        $jsonp(url, {})
+            .then(function (res) {
+                if (res) {
+                    document.getElementById('res').innerText = JSON.stringify(res);
+                } else {
+                    console.log('未返回数据');
+                }
+            }, function (err) {
+                console.log(err.type + '：请求失败');
+            })
+    })()
+</script>
+</body>
+</html>
