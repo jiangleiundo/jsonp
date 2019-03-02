@@ -1,7 +1,8 @@
 /**
- *  js原生自定义jsonp插件
+ * Author by J.
+ * Date 2019/3/2
+ * js原生自定义jsonp插件
  * 只需在HTML中引入http.js然后调用即可
- *  调用 $jsonp(url, {}, fun)
  */
 
 ;(function (window, document, undefined) {
